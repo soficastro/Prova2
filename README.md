@@ -5,8 +5,11 @@ de ponto. O sistema deve pagar cada empregado. Empregados devem receber o salár
 - Adicionar, editar e remover funcionários dos tipos assalariado, horista e assalariado comissionado.
 - Lançar cartão de ponto, resultado de venda e taxa de serviço aos funcionários.
 - Lançar folha de pagamento do dia, evetuando os devidos pagamentos.
-- Desfazer as ações descritas anteriormente (Undo/Redo) .
+- Desfazer as ações descritas anteriormente (Undo/Redo).
+- Mostrar e criar uma agenda de pagamento para o funcionário.
 
-# Padrões de projeto utilizados
+# *Padrões de projeto utilizados*
 - Memento: Para que fosse executada a funcionalidade Undo/Redo, foi implementado o padrão de projeto Memento sobre a classe Systema, que atua como "originator", assim, são salvos estados desta classe sempre que necessário. A classe Memento foi implementada para que sirva como uma cópia do estado do objeto da classe Systema, enquanto a classe Caretaker é responsável pelo gerenciamento desses mementos. 
-- Builder: Com o objetivo de melhorar a construção de objetos da classe Employee, que possui muitos atributos e 3 subclasses, foi utilizado o padrão de projeto Builder. Para isso, foram criadas as classes EmployeeBuilder, HourlyBuilder, ComissionedBuilder e SalariedBuilder, aninhadas às classes Employee, Hourly, Comissioned, e Salaried, respectivamente. 
+- Builder: Com o objetivo de melhorar a construção de objetos da classe Employee, que possui muitos atributos e 3 subclasses, foi utilizado o padrão de projeto Builder. Para isso, foram criadas as classes EmployeeBuilder, HourlyBuilder, ComissionedBuilder e SalariedBuilder, aninhadas às classes Employee, Hourly, Comissioned, e Salaried, respectivamente. Como essas últimas três são subclasses de Employee, suas classes builder extendem de EmployeeBuilder.
+
+
